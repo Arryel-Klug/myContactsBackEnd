@@ -21,7 +21,7 @@ class ContactsRepository {
   }
 
   async findByEmail(email) {
-    const [row] = await db.query('SELECT email FROM contacts WHERE email = $1', [email]);
+    const [row] = await db.query('SELECT id, email FROM contacts WHERE email = $1', [email]);
     return row;
   }
 
